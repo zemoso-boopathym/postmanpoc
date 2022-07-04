@@ -1,0 +1,25 @@
+{
+  "name": "postmanpoc",
+  "version": "1.0.0",
+  "description": "Converting postman public API to Graphql API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zemoso-boopathym/postmanpoc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zemoso-boopathym/postmanpoc/issues"
+  },
+  "homepage": "https://github.com/zemoso-boopathym/postmanpoc#readme",
+  "dependencies": {
+    "apollo-server": "^3.9.0",
+    "graphql": "^16.5.0"
+  }
+}
