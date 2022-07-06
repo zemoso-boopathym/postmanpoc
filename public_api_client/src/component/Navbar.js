@@ -5,6 +5,8 @@ import { AuthContext } from '../firebase/auth';
 import { auth } from '../firebase/firebase';
 import { signOut } from 'firebase/auth';
 
+import { MESSAGES } from '../util/messages';
+
 export default function Navbar() {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ export default function Navbar() {
                 marginLeft: '2rem',
               }}
             >
-              Fiat Currencies
+              {MESSAGES.APP_NAME}
             </Link>
           </Typography>
           <Box alignItems='right' sx={{ flexGrow: 1, textAlign: 'right' }}>
@@ -46,7 +48,7 @@ export default function Navbar() {
                   marginRight: '2rem',
                 }}
               >
-                Logout
+                {MESSAGES.LOGOUT}
               </Button>
             ) : (
               <>
@@ -58,7 +60,7 @@ export default function Navbar() {
                     marginRight: '2rem',
                   }}
                 >
-                  Login
+                  {MESSAGES.LOGIN}
                 </Link>
                 <Link
                   to='/register'
@@ -68,7 +70,7 @@ export default function Navbar() {
                     marginRight: '1rem',
                   }}
                 >
-                  Register
+                  {MESSAGES.REGISTER}
                 </Link>
               </>
             )}

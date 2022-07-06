@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../firebase/auth';
 import LoadingSpinner from '../component/LoadingSpinner';
+import { MESSAGES } from '../util/messages';
 
 const GET_COINS = gql`
   query {
@@ -29,7 +30,7 @@ function CoinList() {
 
   if (loading) return <LoadingSpinner />;
 
-  if (error) return <h1>Something went wrong!</h1>;
+  if (error) return <h1>{MESSAGES.SOMETHING_WRONG}</h1>;
 
   return (
     <>

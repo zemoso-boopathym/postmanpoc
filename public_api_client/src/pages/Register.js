@@ -4,6 +4,7 @@ import { TextField, Button, Container, Stack, Alert } from '@mui/material';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 import { auth } from '../firebase/firebase';
+import { MESSAGES } from '../util/messages';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -36,9 +37,9 @@ export default function Register() {
         maxWidth='sm'
         style={{ margin: '2rem auto', textAlign: 'center' }}
       >
-        <h2>Register</h2>
+        <h2>{MESSAGES.REGISTER}</h2>
         <p style={{ marginTop: '1rem', textAlign: 'center' }}>
-          Register below to create an account.
+          {MESSAGES.REGISTER_PAGE}
         </p>
         <Stack spacing={2} padding={4}>
           <TextField
@@ -61,7 +62,7 @@ export default function Register() {
         </Stack>
         {errors && <Alert severity='error'>{errors}</Alert>}
         <Button variant='contained' onClick={onRegister}>
-          Register
+          {MESSAGES.REGISTER}
         </Button>
       </Container>
     </div>

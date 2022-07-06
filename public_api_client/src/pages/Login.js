@@ -4,6 +4,7 @@ import { TextField, Button, Container, Stack, Alert } from '@mui/material';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import { auth } from '../firebase/firebase';
+import { MESSAGES } from '../util/messages';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -28,7 +29,9 @@ export default function Login() {
         style={{ margin: '2rem auto', textAlign: 'center' }}
       >
         <h2>Login</h2>
-        <p style={{ marginTop: '1rem', textAlign: 'center' }}>Login Page</p>
+        <p style={{ marginTop: '1rem', textAlign: 'center' }}>
+          {MESSAGES.LOGIN_PAGE}
+        </p>
         <Stack spacing={2} padding={4}>
           <TextField
             label='Email'
@@ -44,7 +47,7 @@ export default function Login() {
         </Stack>
         {errors && <Alert severity='error'>{errors}</Alert>}
         <Button variant='contained' onClick={onLogin}>
-          Login
+          {MESSAGES.LOGIN}
         </Button>
       </Container>
     </div>
